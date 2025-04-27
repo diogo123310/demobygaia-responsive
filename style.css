@@ -1,0 +1,502 @@
+:root {
+    --main-color: #38442C;
+    --black: #000000;
+    --bg: #000000;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+    font-size: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg);
+
+}
+
+section {
+    padding: 7rem 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+footer {
+    background-color: var(--bg);
+    color: #fff;
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+}
+.header .logo img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-bottom: var(--border);
+    background-color: var(--bg);
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.navbar a {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: #fff;
+
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.icons img {
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.icons img:hover {
+    width: 35px;
+    height: 35px;
+
+}
+
+.btn {
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 1rem 3rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    letter-spacing: 0.1rem;
+}
+
+.home-container {
+    background: url("./img/fundo.jpg");
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.home-container section {
+    display: flex;
+    align-items: center
+    
+}
+
+.content {
+    padding-top: 10rem;
+    max-width: 50rem;
+}
+
+.content h1 {
+    padding-top: 10rem;
+    font-size: 6rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+    margin-bottom: 5rem;
+}
+
+.content p {
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 2rem 0;
+    margin: 0rem;
+    color: #fff;
+}
+
+.title {
+    font-size: 4rem;
+    color: var(--main-color);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+
+}
+
+.title span {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.sobre .row {
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+    gap: 1.5rem;
+    padding-top: 5rem;
+
+}
+
+.sobre .row .content {
+    padding: 2rem;
+}
+
+.sobre .row .content h3 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.sobre .row .content p {
+    font-size: 1.5rem;
+    color: #ccc;
+    padding: 1rem 0;
+    line-height: 1.8rem;
+}
+.horarios {
+    background-color: var(--black);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Estilo da lista de horários */
+.horarios ul {
+    list-style: none; /* Remove os pontos da lista */
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo para cada item da lista */
+.horarios li {
+    display: flex;
+    justify-content: space-between; /* Alinha o conteúdo nas extremidades */
+    padding: 15px 0;
+    border-bottom: 1px solid var(--black);
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* Coluna para o dia da semana */
+.horarios li .dia {
+    flex: 1; /* Deixa o dia ocupar a maior parte do espaço */
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Coluna para os horários */
+.horarios li .horario {
+    flex: 1; /* Deixa o horário ocupar o restante do espaço */
+    text-align: right; /* Alinha o horário à direita */
+    color: #fff;
+}
+
+/* Estilo para o dia "Encerrado" */
+.horarios li.encerrado {
+    color: var(--main-color); /* Vermelho para indicar encerrado */
+    font-weight: bold;
+}
+
+/* Estilo para o horário "Encerrado" */
+.horarios li.encerrado .horario {
+    color: var(--main-color);
+    text-align: right; /* Deixa o horário alinhado à esquerda, caso esteja "encerrado" */
+}
+.menu .menu-slider {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.menu .menu-slider .img {
+    height: 25rem;
+    justify-content: space-between;
+}
+
+#menu {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.menu-slider {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Ajuste o tamanho conforme necessário */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-image {
+    position: absolute;  /* Empilha as imagens umas sobre as outras */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  /* Garante que as imagens cubram toda a área do slider */
+    opacity: 0;  /* As imagens começam invisíveis */
+    transition: opacity 1s ease-in-out;  /* Transição suave para a opacidade */
+}
+
+.menu-image.active {
+    opacity: 1;  /* A imagem ativa será visível */
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+}
+.reviews .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: stretch;
+}
+
+.reviews .box {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reviews .box-container .box{
+    text-align: center;
+    padding: 3rem 2rem; 
+    border:var(--black);
+    
+}
+.reviews .box-container .box p{
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 2rem 0;
+    line-height: 1.8;
+}
+.reviews .box-container .box h3{
+    font-size: 2rem;
+    color: #fff;
+    line-height: 1.8;
+}
+.reviews .box-container .box .user{
+    width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 10px 0;
+
+}
+.location {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footer {
+    text-align: center;
+}
+.footer share {
+    padding: 1rem 0;
+}
+.footer .share img{
+    margin: 0.3rem;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 1rem;}
+
+.footer .share img:hover{
+    background-color: #38442C;
+}
+
+@media (max-width: 1000px) {
+    section {
+        margin: 0;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+.home-content {
+    flex: 1 1 40rem;
+    
+}
+    .row,
+    .box-container,
+    .menu-slider {
+        flex-direction: column;
+        align-items: center;
+    }
+    .content h1 {
+        padding-top: 3rem;
+        font-size: 5rem;
+        color: #fff;
+        text-transform: uppercase;
+        text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+        margin-bottom: 5rem;
+    }
+
+    h1 {
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 18px;
+        width: 90%;
+        text-align: center;
+    }
+
+    .icons {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9); /* Fundo preto com transparência */
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 100;
+        transition: all 0.3s ease; /* Animação suave */
+        padding: 1rem 0; /* Espaçamento vertical */
+        backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+    }
+    
+    .navbar.active {
+        display: flex;
+    }
+    
+    .navbar a {
+        margin: 0.5rem 0;
+        padding: 1rem;
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: white;
+        text-align: center;
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, 0.1); /* borda fininha */
+        transition: background 0.3s;
+    }
+    
+    .navbar a:hover {
+        background: rgba(255, 255, 255, 0.1); /* Hover suave */
+    }
+
+    .menu-slider {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-image {
+        width: 100%;
+        height: auto;
+    }
+
+    iframe {
+        width: 100%;
+        height: 300px;
+        margin-top: 20px; /* dá espaço entre reviews e location */
+    }
+
+    .location {
+        padding-top: 50px; /* separa a localização */
+    }
+.sobre {
+    text-align: center;
+
+}
+.sobre .row .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+
+}
+.sobre .row .content p{
+    font-size: 1.5rem;
+    color: #fff;
+    line-height: 1.8;
+    flex: 1 1 40rem;
+}
+.footer p{ 
+    text-align: center
+    ;
+
+}
+.content p {
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 1rem 0;
+    margin: 1.5rem;
+    color: #fff;
+}
+}
