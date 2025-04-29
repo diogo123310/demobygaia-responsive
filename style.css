@@ -406,7 +406,15 @@ footer {
         width: 90%;
         text-align: center;
     }
-
+    .header {
+        background-color: #000; /* ou a cor que estiveres a usar */
+        padding: 1px 10px; /* reduz o espaço interno do header */
+      }
+      .header .logo img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+      }
     .icons {
         display: none;
     }
@@ -486,11 +494,16 @@ footer {
     line-height: 1.8;
     flex: 1 1 40rem;
 }
-.footer p{ 
-    text-align: center
-    ;
+footer {
+    text-align: center;
+    padding-left: 40px;
+    color:#ffffff;
+    align-items: center;
+    font-size: 0.5rem;
 
-}
+  }
+  
+  
 .content p {
     font-size: 2rem;
     font-weight: lighter;
