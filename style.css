@@ -16,12 +16,32 @@
     transition: 0.2s linear;
     font-family: "Roboto", sans-serif;
     box-sizing: border-box;
-    
+
 }
 
-html{
+/* Visibilidade condicional para mobile e desktop */
+.desktop-only {
+    display: inline-block;
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: inline-block;
+    }
+}
+
+html {
     scroll-behavior: smooth;
 }
+
 body {
     width: 100%;
     overflow-x: hidden;
@@ -37,6 +57,7 @@ section {
     margin: 0 auto;
     max-width: 1200px;
 }
+
 footer {
     background-color: var(--bg);
     color: #fff;
@@ -44,6 +65,7 @@ footer {
     font-size: 1.4rem;
     margin-bottom: 4rem;
 }
+
 .header .logo img {
     border-radius: 50%;
     width: 100px;
@@ -57,7 +79,11 @@ footer {
     right: 0;
     z-index: 99;
     border-bottom: var(--border);
-    background-color: var(--bg);
+    backdrop-filter: blur(10px);
+    /* efeito de desfoque */
+    background-color: rgba(17, 9, 9, 0.575);
+    /* transparente com leve cor */
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .header section {
@@ -116,8 +142,7 @@ footer {
 
 .home-container section {
     display: flex;
-    align-items: center
-    
+    align-items: center;
 }
 
 .content {
@@ -181,6 +206,7 @@ footer {
     padding: 1rem 0;
     line-height: 1.8rem;
 }
+
 .horarios {
     background-color: var(--black);
     padding: 20px;
@@ -194,7 +220,8 @@ footer {
 
 /* Estilo da lista de horários */
 .horarios ul {
-    list-style: none; /* Remove os pontos da lista */
+    list-style: none;
+    /* Remove os pontos da lista */
     padding: 0;
     margin: 0;
 }
@@ -202,7 +229,8 @@ footer {
 /* Estilo para cada item da lista */
 .horarios li {
     display: flex;
-    justify-content: space-between; /* Alinha o conteúdo nas extremidades */
+    justify-content: space-between;
+    /* Alinha o conteúdo nas extremidades */
     padding: 15px 0;
     border-bottom: 1px solid var(--black);
     font-size: 2rem;
@@ -211,29 +239,35 @@ footer {
 
 /* Coluna para o dia da semana */
 .horarios li .dia {
-    flex: 1; /* Deixa o dia ocupar a maior parte do espaço */
+    flex: 1;
+    /* Deixa o dia ocupar a maior parte do espaço */
     font-weight: bold;
     color: #fff;
 }
 
 /* Coluna para os horários */
 .horarios li .horario {
-    flex: 1; /* Deixa o horário ocupar o restante do espaço */
-    text-align: right; /* Alinha o horário à direita */
+    flex: 1;
+    /* Deixa o horário ocupar o restante do espaço */
+    text-align: right;
+    /* Alinha o horário à direita */
     color: #fff;
 }
 
 /* Estilo para o dia "Encerrado" */
 .horarios li.encerrado {
-    color: var(--main-color); /* Vermelho para indicar encerrado */
+    color: var(--main-color);
+    /* Vermelho para indicar encerrado */
     font-weight: bold;
 }
 
 /* Estilo para o horário "Encerrado" */
 .horarios li.encerrado .horario {
     color: var(--main-color);
-    text-align: right; /* Deixa o horário alinhado à esquerda, caso esteja "encerrado" */
+    text-align: right;
+    /* Deixa o horário alinhado à esquerda, caso esteja "encerrado" */
 }
+
 .menu .menu-slider {
     display: grid;
     gap: 1.5rem;
@@ -255,7 +289,8 @@ footer {
 .menu-slider {
     position: relative;
     width: 100%;
-    height: 50vh; /* Ajuste o tamanho conforme necessário */
+    height: 50vh;
+    /* Ajuste o tamanho conforme necessário */
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -263,16 +298,21 @@ footer {
 }
 
 .menu-image {
-    position: absolute;  /* Empilha as imagens umas sobre as outras */
+    position: absolute;
+    /* Empilha as imagens umas sobre as outras */
     width: 100%;
     height: 100%;
-    object-fit: contain;  /* Garante que as imagens cubram toda a área do slider */
-    opacity: 0;  /* As imagens começam invisíveis */
-    transition: opacity 1s ease-in-out;  /* Transição suave para a opacidade */
+    object-fit: contain;
+    /* Garante que as imagens cubram toda a área do slider */
+    opacity: 0;
+    /* As imagens começam invisíveis */
+    transition: opacity 1s ease-in-out;
+    /* Transição suave para a opacidade */
 }
 
 .menu-image.active {
-    opacity: 1;  /* A imagem ativa será visível */
+    opacity: 1;
+    /* A imagem ativa será visível */
 }
 
 .arrow {
@@ -301,6 +341,7 @@ footer {
     color: #fff;
     cursor: pointer;
 }
+
 .reviews .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -321,49 +362,57 @@ footer {
     align-items: center;
 }
 
-.reviews .box-container .box{
+.reviews .box-container .box {
     text-align: center;
-    padding: 3rem 2rem; 
-    border:var(--black);
-    
+    padding: 3rem 2rem;
+    border: var(--black);
+
 }
-.reviews .box-container .box p{
+
+.reviews .box-container .box p {
     font-size: 1.5rem;
     color: #fff;
     padding: 2rem 0;
     line-height: 1.8;
 }
-.reviews .box-container .box h3{
+
+.reviews .box-container .box h3 {
     font-size: 2rem;
     color: #fff;
     line-height: 1.8;
 }
-.reviews .box-container .box .user{
+
+.reviews .box-container .box .user {
     width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 10px 0;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 10px 0;
 
 }
+
 .location {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
+
 .footer {
     text-align: center;
 }
+
 .footer share {
     padding: 1rem 0;
 }
-.footer .share img{
+
+.footer .share img {
     margin: 0.3rem;
     cursor: pointer;
     border-radius: 50%;
-    padding: 1rem;}
+    padding: 1rem;
+}
 
-.footer .share img:hover{
+.footer .share img:hover {
     background-color: #38442C;
 }
 
@@ -376,16 +425,19 @@ footer {
         max-width: 100%;
         height: auto;
     }
-.home-content {
-    flex: 1 1 40rem;
-    
-}
+
+    .home-content {
+        flex: 1 1 40rem;
+
+    }
+
     .row,
     .box-container,
     .menu-slider {
         flex-direction: column;
         align-items: center;
     }
+
     .content h1 {
         padding-top: 3rem;
         font-size: 5rem;
@@ -406,15 +458,25 @@ footer {
         width: 90%;
         text-align: center;
     }
+
     .header {
-        background-color: #000; /* ou a cor que estiveres a usar */
-        padding: 1px 10px; /* reduz o espaço interno do header */
-      }
-      .header .logo img {
+        background-color: #000;
+        /* ou a cor que estiveres a usar */
+        padding: 1px 10px;
+        /* reduz o espaço interno do header */
+        backdrop-filter: blur(10px);
+        /* efeito de desfoque */
+        background-color: rgba(17, 9, 9, 0.575);
+        /* transparente com leve cor */
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .header .logo img {
         width: 80px;
         height: 80px;
         object-fit: contain;
-      }
+    }
+
     .icons {
         display: none;
     }
@@ -426,21 +488,25 @@ footer {
     .navbar {
         display: none;
         flex-direction: column;
-        background: rgba(0, 0, 0, 0.9); /* Fundo preto com transparência */
+        background: rgba(0, 0, 0, 0.9);
+        /* Fundo preto com transparência */
         width: 100%;
         position: absolute;
         top: 100%;
         left: 0;
         z-index: 100;
-        transition: all 0.3s ease; /* Animação suave */
-        padding: 1rem 0; /* Espaçamento vertical */
-        backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+        transition: all 0.3s ease;
+        /* Animação suave */
+        padding: 1rem 0;
+        /* Espaçamento vertical */
+        backdrop-filter: blur(5px);
+        /* Efeito de desfoque no fundo */
     }
-    
+
     .navbar.active {
         display: flex;
     }
-    
+
     .navbar a {
         margin: 0.5rem 0;
         padding: 1rem;
@@ -449,12 +515,14 @@ footer {
         color: white;
         text-align: center;
         width: 100%;
-        border-top: 1px solid rgba(255, 255, 255, 0.1); /* borda fininha */
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        /* borda fininha */
         transition: background 0.3s;
     }
-    
+
     .navbar a:hover {
-        background: rgba(255, 255, 255, 0.1); /* Hover suave */
+        background: rgba(255, 255, 255, 0.1);
+        /* Hover suave */
     }
 
     .menu-slider {
@@ -471,45 +539,51 @@ footer {
     iframe {
         width: 100%;
         height: 300px;
-        margin-top: 20px; /* dá espaço entre reviews e location */
+        margin-top: 20px;
+        /* dá espaço entre reviews e location */
     }
 
     .location {
-        padding-top: 50px; /* separa a localização */
+        padding-top: 50px;
+        /* separa a localização */
     }
-.sobre {
-    text-align: center;
 
-}
-.sobre .row .content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: center;
+    .sobre {
+        text-align: center;
 
-}
-.sobre .row .content p{
-    font-size: 1.5rem;
-    color: #fff;
-    line-height: 1.8;
-    flex: 1 1 40rem;
-}
-footer {
-    text-align: center;
-    padding-left: 40px;
-    color:#ffffff;
-    align-items: center;
-    font-size: 0.5rem;
+    }
 
-  }
-  
-  
-.content p {
-    font-size: 2rem;
-    font-weight: lighter;
-    line-height: 1.8;
-    padding: 1rem 0;
-    margin: 1.5rem;
-    color: #fff;
-}
+    .sobre .row .content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+
+    }
+
+    .sobre .row .content p {
+        font-size: 1.5rem;
+        color: #fff;
+        line-height: 1.8;
+        flex: 1 1 40rem;
+    }
+
+    footer {
+        text-align: center;
+        padding-left: 40px;
+        color: #ffffff;
+        align-items: center;
+        font-size: 0.5rem;
+
+    }
+
+
+    .content p {
+        font-size: 2rem;
+        font-weight: lighter;
+        line-height: 1.8;
+        padding: 1rem 0;
+        margin: 1.5rem;
+        color: #fff;
+    }
 }
