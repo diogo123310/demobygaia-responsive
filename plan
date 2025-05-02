@@ -1,0 +1,43 @@
+hostel-app/
+├── public/
+│   └── index.html
+├── src/
+│   ├── assets/                # Imagens, ícones, etc.
+│   ├── components/            # Componentes reutilizáveis
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   ├── RoomCard.jsx
+│   │   └── Button.jsx
+│   ├── features/              # Módulos por funcionalidade
+│   │   ├── booking/
+│   │   │   ├── BookingForm.jsx
+│   │   │   ├── bookingSlice.js
+│   │   │   └── utils.js
+│   │   ├── rooms/
+│   │   │   ├── RoomList.jsx
+│   │   │   ├── RoomDetails.jsx
+│   │   │   └── roomsSlice.js
+│   │   └── auth/
+│   │       ├── Login.jsx
+│   │       ├── Register.jsx
+│   │       └── authSlice.js
+│   ├── layout/                # Layouts globais
+│   │   └── MainLayout.jsx
+│   ├── pages/                 # Páginas principais
+│   │   ├── Home.jsx
+│   │   ├── Rooms.jsx
+│   │   ├── Booking.jsx
+│   │   ├── About.jsx
+│   │   └── Contact.jsx
+│   ├── routes/                # Definição de rotas
+│   │   └── AppRoutes.jsx
+│   ├── services/              # Integração com API
+│   │   └── api.js
+│   ├── styles/                # Estilos globais ou tailwind config extra
+│   │   └── globals.css
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── tailwind.config.js
+├── .env
+├── package.json
+└── README.md
